@@ -1,4 +1,4 @@
-import { FETCH_USER_LIST, DELETE_USER_LIST, ADD_USER_LIST } from './types';
+import { FETCH_USER_LIST, DELETE_USER_LIST, ADD_USER_LIST, EDIT_USER_LIST } from './types';
 
 export const getUsers = () =>  {
  return {
@@ -17,5 +17,11 @@ export const getDelete = (name) => {
     return {
         type: DELETE_USER_LIST,
         payload:name,
-    }
-}
+    };
+};
+export const getEdit = (name) => {
+    return {
+        type: EDIT_USER_LIST,
+        payload:name,
+    };
+};
