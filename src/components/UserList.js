@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getUsers, getDelete, addUsers, getEdit } from '../actions/userAction';
+import { getUsers, getDelete, addUsers, getEdit, updateUser } from '../actions/userAction';
 import PropTypes from 'prop-types';
 import AddUser from './AddUser';
 import EditUser from './EditUser';
@@ -29,7 +29,12 @@ class UserList extends Component {
       editUserData:user,
     });
     this.props.getEdit(user);
+    console.log("Editing mode");
   }
+  handleSaveEdit = (user) =>{
+    this.props.updateUser(user);
+  }
+
   render() {
     const { users } = this.props.user;
     const renderUser = users.map(user=>(
@@ -49,7 +54,9 @@ class UserList extends Component {
           name:this.state.editUserData.name,
           email:this.state.editUserData.email,
           country:this.state.editUserData.country,
-        }}/> : 
+        }}
+        onSubmit={this.handleSaveEdit}
+        /> : 
           <AddUser onSubmit={this.handleSubmit}/>}
           <h1>This is userlist</h1>
             {renderUser}
@@ -65,4 +72,4 @@ UserList.propTypes = {
 const mapStateToProps = (state) =>({
   user:state.user
 });
-export default connect(mapStateToProps, { getUsers, getDelete, addUsers, getEdit })(UserList);
+export default connect(mapStateToProps, { getUsers, getDelete, addUsers, getEdit,updateUser })(UserList);

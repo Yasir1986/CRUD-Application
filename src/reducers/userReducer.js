@@ -1,4 +1,4 @@
-import { FETCH_USER_LIST, DELETE_USER_LIST,  ADD_USER_LIST, EDIT_USER_LIST } from '../actions/types';
+import { FETCH_USER_LIST, DELETE_USER_LIST,  ADD_USER_LIST, EDIT_USER_LIST, UPDATE_USER_LIST } from '../actions/types';
 
 const initialState = {
  users:[
@@ -34,6 +34,11 @@ export default function(state=initialState, action){
         return {
             ...state,
             users: state.users.map(user => user.name===action.payload ? {...user,isEditing: !user.isEditing}:user)
+        };
+        case UPDATE_USER_LIST:
+        return {
+            ...state,
+            users: state.users.map(user => user.name===action.payload ? {...user,user:action.payload}:user)
         };
         default:
         return state;
