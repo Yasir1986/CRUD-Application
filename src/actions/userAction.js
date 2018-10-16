@@ -28,6 +28,7 @@ export const getEdit = (name) => {
 export const updateUser = (user) => {
     return {
         type: UPDATE_USER_LIST,
-        payload:user,
+        user:user,
+        payload:user.name,
     };
 };

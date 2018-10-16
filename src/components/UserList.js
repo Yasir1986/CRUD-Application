@@ -33,6 +33,7 @@ class UserList extends Component {
   }
   handleSaveEdit = (user) =>{
     this.props.updateUser(user);
+    console.log(this.props.updateUser(user))
   }
 
   render() {

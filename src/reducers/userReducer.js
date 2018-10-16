@@ -36,10 +36,16 @@ export default function(state=initialState, action){
             users: state.users.map(user => user.name===action.payload ? {...user,isEditing: !user.isEditing}:user)
         };
         case UPDATE_USER_LIST:
-        return {
+        return { 
             ...state,
-            users: state.users.map(user => user.name===action.payload ? {...user,user:action.payload}:user)
-        };
+            users: state.users.map(user => user.name===action.payload ? 
+                {...user,
+                    name:action.user.name,
+                    email:action.user.email,
+                    country:action.user.country,
+                }
+                :user)
+        }
         default:
         return state;
     }
