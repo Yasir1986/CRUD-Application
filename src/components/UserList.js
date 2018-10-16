@@ -46,20 +46,16 @@ class UserList extends Component {
     const { users } = this.props.user;
     const renderUser = users.map(user => (
       <ul className="user-lists" key={user.name}>
-        <li>{user.name}</li>
-        <li>{user.email}</li>
-        <li>{user.country}</li>
-        <li>
-          <button onClick={name => this.handleDelete(user.name)}>Delete</button>
-        </li>
-        <li>
-          <button onClick={name => this.handleEdit(user)}>Edit</button>
-        </li>
+        <li><b>Name:</b> {user.name}</li>
+        <li><b>Email:</b> {user.email}</li>
+        <li><b>Country:</b> {user.country}</li>
+        <button onClick={name => this.handleDelete(user.name)}>Delete</button>
+        <button onClick={name => this.handleEdit(user)}>Edit</button>
       </ul>
     ));
     return (
       <div>
-        <h1 align="center">React Redux Crud Application</h1>
+        <div><h1 align="center">React Redux Crud Application</h1></div>
         <div className="app-form">
           {this.state.isEditing ? (
             <EditUser
@@ -75,7 +71,7 @@ class UserList extends Component {
           )}
         </div>
         <div className="app-list">
-          <h1>This is userlist</h1>
+          <h1 align="center">This is userlist</h1>
           {renderUser}
         </div>
       </div>

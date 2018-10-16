@@ -4,7 +4,7 @@ import { Field, reduxForm } from 'redux-form'
 const EditUser = (props) => {
   const { handleSubmit, pristine, reset, submitting } = props
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="form-inline">
       <div>
         <label>Name</label>
         <div>
