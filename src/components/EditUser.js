@@ -6,7 +6,7 @@ const EditUser = (props) => {
   return (
     <form onSubmit={handleSubmit} className="form-inline">
       <div>
-        <label>Name</label>
+        <label>Name:</label>
         <div>
           <Field
             name="name"
@@ -17,7 +17,7 @@ const EditUser = (props) => {
         </div>
       </div>
       <div>
-        <label>Email</label>
+        <label>Email:</label>
         <div>
           <Field
             name="email"
