@@ -3,13 +3,13 @@ import { FETCH_USER_LIST, DELETE_USER_LIST,  ADD_USER_LIST, EDIT_USER_LIST, UPDA
 const initialState = {
  users:[
      {
-         name:"Saidur",
-         email:"swesaon@gmail.com",
-         country:"Bangladesh",
+         name:"Yasir",
+         email:"yasir269050@gmail.com",
+         country:"Pakistan",
      },
      {
-        name:"Rahman",
-        email:"swesaon@gmail.com",
+        name:"Akbar",
+        email:"yasir269050@gmail.com",
         country:"Finland",
     },
     ],
