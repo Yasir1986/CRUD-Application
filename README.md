@@ -7,3 +7,9 @@ npm install
 npm start
 
 Enjoy
+
+OR
+
+Live depolyed link:
+
+https://cranky-fermi-dfdf35.netlify.com/
